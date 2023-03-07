@@ -1,0 +1,14 @@
+.nav-group {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.nav-group a {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-group a i {
+    padding-top: 4%;
+}
