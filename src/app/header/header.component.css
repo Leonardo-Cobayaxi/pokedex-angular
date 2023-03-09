@@ -8,6 +8,11 @@ p {
     margin: 0;
 }
 
+.header a {
+    color: white;
+    text-decoration: none;
+}
+
 .nav-group {
     display: flex;
     flex-direction: row;
@@ -17,8 +22,9 @@ p {
 .nav-group a {
     display: flex;
     flex-direction: row;
+    text-decoration: none;
 }
 
 .nav-group a i {
-    padding-top: 4%;
+    padding-top: 3%;
 }

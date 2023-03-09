@@ -1,22 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { HeaderComponent } from './header/header.component';
-import { PkmListComponent } from './pkm-list/pkm-list.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list'
-import { NavComponent } from './nav/nav.component'
+import { MatCardModule } from '@angular/material/card';
+import { NavComponent } from './nav/nav.component';
+import { HomeComponent } from './home/home.component'
+import { RegionsComponent } from './regions/regions.component';
+import { HeaderComponent } from './header/header.component';
+import { BestmonComponent } from './bestmon/bestmon.component';
+import { KantoComponent } from './regions/kanto/kanto.component'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PkmListComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    RegionsComponent,
+    BestmonComponent,
+    KantoComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +32,8 @@ import { NavComponent } from './nav/nav.component'
     BrowserAnimationsModule,
     MatToolbarModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

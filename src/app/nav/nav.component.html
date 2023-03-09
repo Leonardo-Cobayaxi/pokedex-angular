@@ -1,14 +1,22 @@
-<span class="nav-group">
-    <a>
-        <i class="material-icons">home</i>
-        <p>Home</p>
-    </a>
-    <a>
-        <i class="material-icons">location_on</i>
-        <p>Regions</p>
-    </a>
-    <a>
-        <i class="material-icons">favorite</i>
-        <p>Best Mon</p>
-    </a>
-</span>
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">home</i>
+                Home
+            </a>
+            <a mat-list-item routerLink="/regions">
+                <i class="material-icons">location_on</i>
+                Regions
+            </a>
+            <a mat-list-item routerLink="/bestmon">
+                <i class="material-icons">favorite</i>
+                Best Mon
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet>
+        </router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

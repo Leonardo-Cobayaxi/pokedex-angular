@@ -3,3 +3,76 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.grass {
+    background-color: green;
+}
+
+.poison {
+    background-color: purple;
+
+}
+
+.fire {
+    background-color: red;
+}
+
+.flying {
+    background-color: cadetblue;
+}
+
+.water {
+    background-color: blue;
+}
+
+.bug {
+    background-color: rgba(128, 255, 0, 0.521);
+}
+
+.fighting {
+    background-color: brown;
+}
+
+.dark {
+    background-color: black;
+}
+
+.fairy {
+    background-color: palevioletred;
+}
+
+.psychic {
+    background-color: deeppink;
+}
+
+.ground {
+    background-color: chocolate;
+}
+
+.normal {
+    background-color: blanchedalmond;
+}
+
+.eletric {
+    background-color: yellow;
+}
+
+.rock {
+    background-color: saddlebrown;
+}
+
+.ghost {
+    background-color: mediumslateblue;
+}
+
+.steel {
+    background-color: slategrey;
+}
+
+.ice {
+    background-color: darkcyan;
+}
+
+.dragon {
+    background-color: indigo;
+}

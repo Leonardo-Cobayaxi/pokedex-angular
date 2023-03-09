@@ -1,0 +1,43 @@
+.poke-grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    gap: 1rem;
+    text-transform: capitalize;
+    justify-content: center;
+}
+
+.poke-grid button {
+    all: unset;
+    display: flex;
+    background-color: rgb(70, 67, 68);
+    height: fit-content;
+    cursor: pointer;
+}
+
+.poke-card {
+    width: 20%;
+    height: 20vh;
+    background-color: rgba(255, 255, 255, 0.171);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poke-card img {
+    width: 50%;
+}
+
+
+.poke-card ul {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+}
+
+.poke-card li {
+    border-radius: 15%;
+    list-style: none;
+    padding: 0.10rem;
+}
