@@ -1,11 +1,11 @@
 <div class="poke-grid">
     <button (click)="changeSprite()">
-        toggle
+        Toggle Sprites
     </button>
     <div class="poke-card" *ngFor="let pokemon of pokemons">
         <img *ngIf="!sprite" [src]="pokemon.sprites.versions['generation-v']['black-white'].animated.front_default">
 
-        <img *ngIf="sprite" [src]="pokemon.sprites.versions['generation-vi']['x-y'].front_default" [alt]="pokemon.name">
+        <img *ngIf="sprite" [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name">
         <div>
             <h3>
                 {{pokemon.name}}

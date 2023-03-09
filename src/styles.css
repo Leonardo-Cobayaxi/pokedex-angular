@@ -22,7 +22,7 @@
 }
 
 .water {
-    background-color: blue;
+    background-color: rgb(4, 4, 163);
 }
 
 .bug {
@@ -34,7 +34,7 @@
 }
 
 .dark {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.747);
 }
 
 .fairy {
@@ -50,11 +50,11 @@
 }
 
 .normal {
-    background-color: blanchedalmond;
+    background-color: rgb(97, 92, 86);
 }
 
-.eletric {
-    background-color: yellow;
+.electric {
+    background-color: goldenrod;
 }
 
 .rock {
@@ -75,4 +75,59 @@
 
 .dragon {
     background-color: indigo;
+}
+
+.poke-grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    gap: 1rem;
+    text-transform: capitalize;
+    justify-content: center;
+    margin-top: 64px;
+}
+
+.poke-grid button {
+    all: unset;
+
+    display: flex;
+    background-color: rgba(105, 8, 37, 0.747);
+    height: fit-content;
+    cursor: pointer;
+    position: fixed;
+    padding: 0.1rem;
+    bottom: 0rem;
+    margin-bottom: 1rem;
+    color: bisque;
+
+}
+
+.poke-card {
+    width: 20%;
+    height: 20vh;
+    background-color: rgba(255, 255, 255, 0.171);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.poke-card img {
+    width: 30%;
+    height: 50%;
+
+}
+
+
+.poke-card ul {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+}
+
+.poke-card li {
+    border-radius: 15%;
+    list-style: none;
+    padding: 0.10rem;
 }

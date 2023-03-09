@@ -1,6 +1,12 @@
+.container-header {
+    position: relative;
+    z-index: 2;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
+    position: absolute
 }
 
 .header h1,

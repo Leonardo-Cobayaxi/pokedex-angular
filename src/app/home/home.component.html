@@ -1,6 +1,24 @@
-<mat-card class="home mat-elevatin-z3">
-    <mat-card-title>Titulo home</mat-card-title>
-    <mat-card-subtitle>
-        subtitulo home
-    </mat-card-subtitle>
-</mat-card>
+<div class="home">
+    <mat-card class="home-card mat-elevatin-z3">
+        <mat-card-title class="home-title">Hello!</mat-card-title>
+        <mat-card-subtitle class="home-subtitle">
+            This is my first project in angular, so take it easy on the judgment
+        </mat-card-subtitle>
+    </mat-card>
+    <h1 class="rando-title">Randomon</h1>
+    <div class="rando-card" *ngFor="let rando of randomon">
+        <h3>{{rando.name}}</h3>
+        <img [src]="rando.sprites.other['official-artwork'].front_default">
+        <div>
+            <ul>
+                <li *ngFor="let value of rando.types" [class]="value?.type.name">{{value?.type.name}}</li>
+                <li>HP: {{rando.stats[0].base_stat}}</li>
+                <li>ATK: {{rando.stats[1].base_stat}}</li>
+                <li>DEF: {{rando.stats[2].base_stat}}</li>
+                <li>SP.ATK: {{rando.stats[3].base_stat}}</li>
+                <li>SP.DEF: {{rando.stats[4].base_stat}}</li>
+                <li>SPEED: {{rando.stats[5].base_stat}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
