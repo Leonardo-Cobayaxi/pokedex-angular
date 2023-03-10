@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list'
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component'
 import { RegionsComponent } from './regions/regions.component';
@@ -48,7 +49,8 @@ import { PaldeaComponent } from './regions/paldea/paldea.component'
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

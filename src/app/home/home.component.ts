@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HeaderService } from '../header/header.service';
+
 import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-home',
@@ -15,7 +17,12 @@ export class HomeComponent {
     console.log(rand)
     return rand;
   }
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Home',
+      icon: 'home'
+    }
+  }
   ngOnInit(): void {
     this.dataService.getMoreData(this.randomNumber(0, 1010)).subscribe((dataResponse: any) => {
       this.randomon.push(dataResponse)

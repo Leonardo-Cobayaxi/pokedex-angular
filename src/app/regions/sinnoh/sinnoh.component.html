@@ -1,1 +1,18 @@
-<p>sinnoh works!</p>
+<div class="poke-grid">
+    <button (click)="changeSprite()">
+        toggle sprites
+    </button>
+    <div class="poke-card" *ngFor="let pokemon of pokemons">
+        <img *ngIf="!sprite" [src]="pokemon.sprites.versions['generation-v']['black-white'].animated.front_default">
+
+        <img *ngIf="sprite" [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name">
+        <div>
+            <h3>
+                {{pokemon.name}}
+            </h3>
+            <ul>
+                <li *ngFor="let value of pokemon.types" [class]="value?.type.name">{{value?.type.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

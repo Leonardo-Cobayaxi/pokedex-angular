@@ -1,0 +1,64 @@
+.best-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.best-card {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(196, 186, 190, 0.055);
+    border-radius: 5%;
+    padding: 1rem;
+}
+
+.best-card h3 {
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.best-card img {
+    width: 20rem;
+
+}
+
+
+.best-card li {
+    list-style: none;
+}
+
+
+.best-stats {
+    padding: 0.5rem;
+    background-color: #424242;
+    border-radius: 5%;
+}
+
+.best-type {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+.best-type li {
+    padding: 0.25rem;
+    border-radius: 2%;
+}
+
+.best-ability {
+    padding: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    text-transform: capitalize;
+
+}
+
+.best-ability li {
+    border-radius: 15%;
+    background-color: #c2185b;
+}

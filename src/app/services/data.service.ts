@@ -13,30 +13,29 @@ export class DataService {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`)
   }
   getPokemonsJohto() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=235&offset=151`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=151`)
   }
-  getPokemonsHoen() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=368&offset=252`)
+  getPokemonsHoenn() {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=135&offset=251`)
   }
   getPokemonsSinnoh() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=493&offset=387`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=108&offset=386`)
   }
   getPokemonUnova() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=649&offset=494`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=155&offset=494`)
   }
   getPokemonsKalos() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=721&offset=650`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=72&offset=649`)
   }
   getPokemonsAlola() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=368&offset=722`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=88&offset=721`)
   }
   getPokemonsGalar() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=905&offset=910`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=96&offset=809`)
   }
   getPokemonsPaldea() {
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=1010&offset=906`)
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=105&offset=905`)
   }
-
   getMoreData(name: any) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }

@@ -1,11 +1,9 @@
 .home {
+    margin-top: 64px;
     display: flex;
     height: 90vh;
-
     flex-direction: column;
     align-items: center;
-
-
 }
 
 .home-card {
@@ -34,6 +32,7 @@
     background-color: #535252;
     border-radius: 5%;
     text-transform: capitalize;
+    padding: 0.5rem;
 
 }
 
@@ -50,19 +49,22 @@
     margin-bottom: 0;
 }
 
-.rando-card ul {
+.rando-stats {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
 }
 
 .rando-card li {
     list-style: none;
-    border-radius: 1%;
-    display: flex;
-    width: fit-content;
+    border-radius: 5%;
     padding: 0.25rem;
-    border-radius: 0.25rem;
+}
 
-
+.rando-type {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    text-transform: capitalize;
 }

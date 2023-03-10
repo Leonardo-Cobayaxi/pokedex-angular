@@ -10,14 +10,23 @@
         <h3>{{rando.name}}</h3>
         <img [src]="rando.sprites.other['official-artwork'].front_default">
         <div>
-            <ul>
+            <ul class="rando-type">
                 <li *ngFor="let value of rando.types" [class]="value?.type.name">{{value?.type.name}}</li>
-                <li>HP: {{rando.stats[0].base_stat}}</li>
-                <li>ATK: {{rando.stats[1].base_stat}}</li>
-                <li>DEF: {{rando.stats[2].base_stat}}</li>
-                <li>SP.ATK: {{rando.stats[3].base_stat}}</li>
-                <li>SP.DEF: {{rando.stats[4].base_stat}}</li>
-                <li>SPEED: {{rando.stats[5].base_stat}}</li>
+            </ul>
+            <ul class="rando-stats">
+                <li>HP<mat-progress-bar mode="determinate"
+                        value={{(rando.stats[0].base_stat)*(0.4)}}></mat-progress-bar>
+                </li>
+                <li>ATK<mat-progress-bar mode="determinate"
+                        value={{(rando.stats[1].base_stat)*(0.4)}}></mat-progress-bar></li>
+                <li>DEF<mat-progress-bar mode="determinate"
+                        value={{(rando.stats[2].base_stat)*(0.4)}}></mat-progress-bar></li>
+                <li>SP.ATK<mat-progress-bar mode="determinate"
+                        value={{(rando.stats[3].base_stat)*(0.4)}}></mat-progress-bar></li>
+                <li>SP.DEF<mat-progress-bar mode="determinate"
+                        value={{(rando.stats[4].base_stat)*(0.4)}}></mat-progress-bar></li>
+                <li>SPEED<mat-progress-bar mode="determinate"
+                        value={{(rando.stats[5].base_stat)*(0.4)}}></mat-progress-bar></li>
             </ul>
         </div>
     </div>
