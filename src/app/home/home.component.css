@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     height: 10rem;
+    margin-bottom: 1rem;
 }
 
 .home-title {
@@ -20,6 +21,19 @@
 
 .home-subtitle {
     font-size: medium;
+}
+
+.search-input {
+    width: 100%;
+}
+
+.home h1 {
+    margin-top: 5rem;
+}
+
+.empty-card {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 .rando-title {
@@ -67,4 +81,14 @@
     gap: 0.5rem;
     justify-content: center;
     text-transform: capitalize;
+}
+
+button {
+    margin-bottom: 0;
+}
+
+.lowerCard {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
 }

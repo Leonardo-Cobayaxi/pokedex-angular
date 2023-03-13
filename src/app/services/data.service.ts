@@ -9,6 +9,10 @@ export class DataService {
   constructor(
     private http: HttpClient
   ) { }
+
+  getAllPokemons() {
+    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=1008&offset=0')
+  }
   getPokemonsKanto() {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`)
   }

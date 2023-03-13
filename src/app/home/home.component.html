@@ -5,29 +5,72 @@
             This is my first project in angular, so take it easy on the judgment
         </mat-card-subtitle>
     </mat-card>
-    <h1 class="rando-title">Randomon</h1>
-    <div class="rando-card" *ngFor="let rando of randomon">
-        <h3>{{rando.name}}</h3>
-        <img [src]="rando.sprites.other['official-artwork'].front_default">
-        <div>
-            <ul class="rando-type">
-                <li *ngFor="let value of rando.types" [class]="value?.type.name">{{value?.type.name}}</li>
-            </ul>
-            <ul class="rando-stats">
-                <li>HP<mat-progress-bar mode="determinate"
-                        value={{(rando.stats[0].base_stat)*(0.4)}}></mat-progress-bar>
-                </li>
-                <li>ATK<mat-progress-bar mode="determinate"
-                        value={{(rando.stats[1].base_stat)*(0.4)}}></mat-progress-bar></li>
-                <li>DEF<mat-progress-bar mode="determinate"
-                        value={{(rando.stats[2].base_stat)*(0.4)}}></mat-progress-bar></li>
-                <li>SP.ATK<mat-progress-bar mode="determinate"
-                        value={{(rando.stats[3].base_stat)*(0.4)}}></mat-progress-bar></li>
-                <li>SP.DEF<mat-progress-bar mode="determinate"
-                        value={{(rando.stats[4].base_stat)*(0.4)}}></mat-progress-bar></li>
-                <li>SPEED<mat-progress-bar mode="determinate"
-                        value={{(rando.stats[5].base_stat)*(0.4)}}></mat-progress-bar></li>
-            </ul>
+
+    <form class="poke-form">
+        <mat-form-field class="search-input">
+            <mat-label>Pokémon name</mat-label>
+            <input #input (keyup)="search(input.value)" (keydown.backspace)="(input.value = '')" matInput
+                placeholder="Ex. Ditto ">
+        </mat-form-field>
+    </form>
+    <div class="empty-card" *ngIf="!showSearchCard">
+        <h1>Type a pokémon name above</h1>
+    </div>
+
+    <div class="rando-card" *ngIf="showSearchCard">
+        <h3 *ngFor=" let searched of searchMon ">{{searched.name}}</h3>
+        <div class="rando-card" *ngFor="let search of searchMon">
+            <img [src]="search.sprites.other['official-artwork'].front_default">
+            <div>
+                <ul class="rando-type">
+                    <li *ngFor="let value of search.types" [class]="value?.type.name">{{value?.type.name}}</li>
+                </ul>
+                <ul class="rando-stats">
+                    <li>HP<mat-progress-bar mode="determinate"
+                            value={{(search.stats[0].base_stat)*(0.4)}}></mat-progress-bar>
+                    </li>
+                    <li>ATK<mat-progress-bar mode="determinate"
+                            value={{(search.stats[1].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>DEF<mat-progress-bar mode="determinate"
+                            value={{(search.stats[2].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>SP.ATK<mat-progress-bar mode="determinate"
+                            value={{(search.stats[3].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>SP.DEF<mat-progress-bar mode="determinate"
+                            value={{(search.stats[4].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>SPEED<mat-progress-bar mode="determinate"
+                            value={{(search.stats[5].base_stat)*(0.4)}}></mat-progress-bar></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <mat-spinner></mat-spinner>
+    <div class="lowerCard">
+        <button mat-button color="primary" (click)="mudar()">Cycle Randomon</button>
+        <div class="rando-card" *ngFor="let rando of randomon">
+            <h3>{{rando.name}}</h3>
+            <img [src]="rando.sprites.other['official-artwork'].front_default">
+            <div>
+                <ul class="rando-type">
+                    <li *ngFor="let value of rando.types" [class]="value?.type.name">{{value?.type.name}}</li>
+                </ul>
+                <ul class="rando-stats">
+                    <li>HP<mat-progress-bar mode="determinate"
+                            value={{(rando.stats[0].base_stat)*(0.4)}}></mat-progress-bar>
+                    </li>
+                    <li>ATK<mat-progress-bar mode="determinate"
+                            value={{(rando.stats[1].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>DEF<mat-progress-bar mode="determinate"
+                            value={{(rando.stats[2].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>SP.ATK<mat-progress-bar mode="determinate"
+                            value={{(rando.stats[3].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>SP.DEF<mat-progress-bar mode="determinate"
+                            value={{(rando.stats[4].base_stat)*(0.4)}}></mat-progress-bar></li>
+                    <li>SPEED<mat-progress-bar mode="determinate"
+                            value={{(rando.stats[5].base_stat)*(0.4)}}></mat-progress-bar></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

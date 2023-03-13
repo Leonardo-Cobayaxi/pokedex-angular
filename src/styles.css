@@ -88,18 +88,8 @@
 }
 
 .poke-grid button {
-    all: unset;
-
-    display: flex;
-    background-color: rgba(105, 8, 37, 0.747);
-    height: fit-content;
-    cursor: pointer;
     position: fixed;
-    padding: 0.1rem;
     bottom: 0rem;
-    margin-bottom: 1rem;
-    color: bisque;
-
 }
 
 .poke-card {
