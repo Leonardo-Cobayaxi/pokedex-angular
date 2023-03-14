@@ -50,7 +50,7 @@
 }
 
 .normal {
-    background-color: rgb(97, 92, 86);
+    background-color: #a8a878
 }
 
 .electric {
@@ -100,12 +100,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.25rem;
+    gap: 2rem;
+
 }
 
 .poke-card img {
-    width: 30%;
-    height: 50%;
+    max-width: 30%;
+    max-height: 50%;
 
 }
 
@@ -135,7 +136,7 @@
     border-radius: 5%;
     padding: 1rem;
     position: fixed;
-    top: 15%;
+    top: 10%;
     max-width: 30%;
 }
 
@@ -164,27 +165,28 @@
 .best-type {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 0.25rem;
     justify-content: center;
     text-transform: capitalize;
 }
 
 .best-type li {
     padding: 0.25rem;
-    border-radius: 2%;
+    border-radius: 7%;
+
 }
 
 .best-ability {
     padding: 0.25rem;
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 0.25rem;
     justify-content: center;
     text-transform: capitalize;
 
 }
 
 .best-ability li {
-    border-radius: 15%;
+    border-radius: 7%;
     background-color: #c2185b;
 }

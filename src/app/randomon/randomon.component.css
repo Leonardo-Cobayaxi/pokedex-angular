@@ -3,3 +3,8 @@
     top: 50%;
     left: 50%;
 }
+
+.best-card {
+    position: fixed;
+    top: 10%;
+}
