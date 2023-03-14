@@ -14,10 +14,26 @@ p {
     margin: 0;
 }
 
-.header a {
-    color: white;
-    text-decoration: none;
+
+.logo {
+    background-color: rgb(253, 253, 253);
+    border-radius: 5%;
+    color: black;
+    font-family: fantasy;
+    padding: 0.15rem;
 }
+
+.header a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
 
 .nav-group {
     display: flex;
