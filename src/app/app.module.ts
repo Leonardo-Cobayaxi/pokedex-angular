@@ -26,6 +26,7 @@ import { KalosComponent } from './regions/kalos/kalos.component';
 import { AlolaComponent } from './regions/alola/alola.component';
 import { GalarComponent } from './regions/galar/galar.component';
 import { PaldeaComponent } from './regions/paldea/paldea.component';
+import { RandomonComponent } from './randomon/randomon.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PaldeaComponent } from './regions/paldea/paldea.component';
     KalosComponent,
     AlolaComponent,
     GalarComponent,
-    PaldeaComponent
+    PaldeaComponent,
+    RandomonComponent
 
   ],
   imports: [

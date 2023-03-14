@@ -1,5 +1,5 @@
 <div class="home">
-    <mat-card class="home-card mat-elevatin-z3">
+    <mat-card class="home-card mat-elevatin-z3" *ngIf="showTitleCard">
         <mat-card-title class="home-title">Hello!</mat-card-title>
         <mat-card-subtitle class="home-subtitle">
             This is my first project in angular, so take it easy on the judgment
@@ -16,61 +16,41 @@
     <div class="empty-card" *ngIf="!showSearchCard">
         <h1>Type a pokémon name above</h1>
     </div>
+    <!-- <mat-spinner></mat-spinner> -->
 
-    <div class="rando-card" *ngIf="showSearchCard">
-        <h3 *ngFor=" let searched of searchMon ">{{searched.name}}</h3>
-        <div class="rando-card" *ngFor="let search of searchMon">
-            <img [src]="search.sprites.other['official-artwork'].front_default">
-            <div>
-                <ul class="rando-type">
-                    <li *ngFor="let value of search.types" [class]="value?.type.name">{{value?.type.name}}</li>
+
+    <div class="best-container" *ngIf="showSearchCard">
+        <div class="best-card" *ngFor="let best of searchMon">
+            <img [src]="best.sprites.other['official-artwork'].front_default">
+            <h3>{{best.name}}</h3>
+            <div class="best-stats">
+                <ul class="best-type">
+                    <li class="best-type" *ngFor="let value of best.types" [class]="value?.type.name">
+                        {{value?.type.name}}
+                    </li>
                 </ul>
-                <ul class="rando-stats">
+                <ul class="best-ability">
+                    <li class="best-ability" *ngFor="let value of best.abilities" [class]="value?.ability.name">
+                        {{value?.ability.name}}</li>
+                </ul>
+                <ul>
                     <li>HP<mat-progress-bar mode="determinate"
-                            value={{(search.stats[0].base_stat)*(0.4)}}></mat-progress-bar>
+                            value={{(best.stats[0].base_stat)*(0.4)}}></mat-progress-bar>
                     </li>
                     <li>ATK<mat-progress-bar mode="determinate"
-                            value={{(search.stats[1].base_stat)*(0.4)}}></mat-progress-bar></li>
+                            value={{(best.stats[1].base_stat)*(0.4)}}></mat-progress-bar></li>
                     <li>DEF<mat-progress-bar mode="determinate"
-                            value={{(search.stats[2].base_stat)*(0.4)}}></mat-progress-bar></li>
+                            value={{(best.stats[2].base_stat)*(0.4)}}></mat-progress-bar></li>
                     <li>SP.ATK<mat-progress-bar mode="determinate"
-                            value={{(search.stats[3].base_stat)*(0.4)}}></mat-progress-bar></li>
+                            value={{(best.stats[3].base_stat)*(0.4)}}></mat-progress-bar></li>
                     <li>SP.DEF<mat-progress-bar mode="determinate"
-                            value={{(search.stats[4].base_stat)*(0.4)}}></mat-progress-bar></li>
+                            value={{(best.stats[4].base_stat)*(0.4)}}></mat-progress-bar></li>
                     <li>SPEED<mat-progress-bar mode="determinate"
-                            value={{(search.stats[5].base_stat)*(0.4)}}></mat-progress-bar></li>
+                            value={{(best.stats[5].base_stat)*(0.4)}}></mat-progress-bar></li>
                 </ul>
             </div>
         </div>
     </div>
 
 
-    <mat-spinner></mat-spinner>
-    <div class="lowerCard">
-        <button mat-button color="primary" (click)="mudar()">Cycle Randomon</button>
-        <div class="rando-card" *ngFor="let rando of randomon">
-            <h3>{{rando.name}}</h3>
-            <img [src]="rando.sprites.other['official-artwork'].front_default">
-            <div>
-                <ul class="rando-type">
-                    <li *ngFor="let value of rando.types" [class]="value?.type.name">{{value?.type.name}}</li>
-                </ul>
-                <ul class="rando-stats">
-                    <li>HP<mat-progress-bar mode="determinate"
-                            value={{(rando.stats[0].base_stat)*(0.4)}}></mat-progress-bar>
-                    </li>
-                    <li>ATK<mat-progress-bar mode="determinate"
-                            value={{(rando.stats[1].base_stat)*(0.4)}}></mat-progress-bar></li>
-                    <li>DEF<mat-progress-bar mode="determinate"
-                            value={{(rando.stats[2].base_stat)*(0.4)}}></mat-progress-bar></li>
-                    <li>SP.ATK<mat-progress-bar mode="determinate"
-                            value={{(rando.stats[3].base_stat)*(0.4)}}></mat-progress-bar></li>
-                    <li>SP.DEF<mat-progress-bar mode="determinate"
-                            value={{(rando.stats[4].base_stat)*(0.4)}}></mat-progress-bar></li>
-                    <li>SPEED<mat-progress-bar mode="determinate"
-                            value={{(rando.stats[5].base_stat)*(0.4)}}></mat-progress-bar></li>
-                </ul>
-            </div>
-        </div>
-    </div>
 </div>

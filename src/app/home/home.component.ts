@@ -12,6 +12,7 @@ export class HomeComponent {
   private allMons: any
   searchMon: any[] = []
   showSearchCard: boolean = false
+  showTitleCard: boolean = true
 
   public search(value: string) {
     let filter = this.allMons.filter((mon: any) => mon.name === value.toLocaleLowerCase())
@@ -23,7 +24,7 @@ export class HomeComponent {
 
       this.searchMon.push(dataResponse)
       this.showSearchCard = true
-
+      this.showTitleCard = false
     })
   }
   randomon: any[] = []
@@ -56,7 +57,6 @@ export class HomeComponent {
     })
     this.dataService.getAllPokemons().subscribe((dataResponse: any) => {
       this.allMons = dataResponse.results
-
     })
 
   }

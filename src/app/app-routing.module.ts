@@ -12,9 +12,14 @@ import { KalosComponent } from './regions/kalos/kalos.component';
 import { AlolaComponent } from './regions/alola/alola.component';
 import { GalarComponent } from './regions/galar/galar.component';
 import { PaldeaComponent } from './regions/paldea/paldea.component';
+import { RandomonComponent } from './randomon/randomon.component';
 const routes: Routes = [{
   path: "",
   component: HomeComponent
+},
+{
+  path: "randomon",
+  component: RandomonComponent
 },
 {
   path: "regions",
