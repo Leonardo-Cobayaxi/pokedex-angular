@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./bestmon.component.css']
 })
 export class BestmonComponent {
-
+  loading: boolean = true
   bestmon: any[] = []
   constructor(private dataService: DataService, headerService: HeaderService) {
     headerService.headerData = {
@@ -18,9 +18,10 @@ export class BestmonComponent {
     }
   }
   ngOnInit(): void {
+
     this.dataService.getMoreData(553).subscribe((dataResponse: any) => {
       this.bestmon.push(dataResponse)
-      console.log(this.bestmon)
+      this.loading = false
     })
   }
 }

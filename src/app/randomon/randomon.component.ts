@@ -9,6 +9,7 @@ import { HeaderService } from '../header/header.service';
 })
 export class RandomonComponent {
   randomon: any[] = []
+  loading: boolean = true
   randomNumber = function (min: number = 0, max: number = 1010) {
     let difference = max - min;
     let rand = Math.random();
@@ -18,7 +19,9 @@ export class RandomonComponent {
   }
   mudar() {
     this.randomon = []
+    this.loading = true
     this.dataService.getMoreData(this.randomNumber(0, 1010)).subscribe((dataResponse: any) => {
+      this.loading = false
       dataResponse[dataResponse.lenght - 1]
       this.randomon.push(dataResponse)
     })
@@ -32,6 +35,7 @@ export class RandomonComponent {
   ngOnInit(): void {
     this.dataService.getMoreData(this.randomNumber(0, 1010)).subscribe((dataResponse: any) => {
       dataResponse[dataResponse.lenght - 1]
+      this.loading = false
       this.randomon.push(dataResponse)
     })
   }

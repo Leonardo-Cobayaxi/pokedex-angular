@@ -129,12 +129,14 @@
 }
 
 .best-card {
-    margin-top: 64px;
     display: flex;
     flex-direction: column;
     background-color: rgba(196, 186, 190, 0.055);
     border-radius: 5%;
     padding: 1rem;
+    position: fixed;
+    top: 15%;
+    max-width: 30%;
 }
 
 .best-card h3 {
@@ -143,8 +145,8 @@
 }
 
 .best-card img {
-    width: 20rem;
-
+    width: 80%;
+    align-self: center;
 }
 
 

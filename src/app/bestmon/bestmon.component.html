@@ -1,5 +1,5 @@
 <div class="best-container">
-
+    <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
     <div class="best-card" *ngFor="let best of bestmon">
         <img [src]="best.sprites.other['official-artwork'].front_default">
         <h3>{{best.name}}</h3>

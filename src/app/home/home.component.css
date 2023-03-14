@@ -23,9 +23,7 @@
     font-size: medium;
 }
 
-.search-input {
-    width: 100%;
-}
+
 
 .home h1 {
     margin-top: 5rem;
@@ -33,7 +31,7 @@
 
 
 .best-card {
-    margin-top: 0;
+    margin-top: 1rem;
 }
 
 .empty-card {

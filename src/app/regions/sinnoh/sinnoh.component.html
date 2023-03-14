@@ -1,4 +1,6 @@
 <div class="poke-grid">
+    <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+
     <button mat-raised-button color="primary" (click)="changeSprite()">
         Toggle Sprites
     </button>

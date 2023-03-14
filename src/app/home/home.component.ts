@@ -13,36 +13,30 @@ export class HomeComponent {
   searchMon: any[] = []
   showSearchCard: boolean = false
   showTitleCard: boolean = true
+  showEmptyCard: boolean = true
+  loading: boolean = false
 
   public search(value: string) {
     let filter = this.allMons.filter((mon: any) => mon.name === value.toLocaleLowerCase())
-    if (value === '' || value.length !== filter[0].name.length) {
+    if (value === '') {
       this.searchMon = []
       this.showSearchCard = false
+      this.showEmptyCard = true
+      this.loading = false
+
+    }
+    if (value !== '') {
+      this.loading = true
+      this.showEmptyCard = false
     }
     this.dataService.getMoreData(filter[0].name).subscribe((dataResponse: any) => {
-
       this.searchMon.push(dataResponse)
       this.showSearchCard = true
       this.showTitleCard = false
+      this.loading = false
     })
   }
-  randomon: any[] = []
-  randomNumber = function (min: number = 0, max: number = 1010) {
-    let difference = max - min;
-    let rand = Math.random();
-    rand = Math.floor(rand * difference);
-    rand = rand + min;
-    return rand;
-  }
-  mudar() {
-    console.log(this.randomNumber(0, 1010))
-    this.randomon = []
-    this.dataService.getMoreData(this.randomNumber(0, 1010)).subscribe((dataResponse: any) => {
-      dataResponse[dataResponse.lenght - 1]
-      this.randomon.push(dataResponse)
-    })
-  }
+
   constructor(private dataService: DataService, headerService: HeaderService) {
     headerService.headerData = {
       title: 'Home',
@@ -51,10 +45,6 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    this.dataService.getMoreData(this.randomNumber(0, 1010)).subscribe((dataResponse: any) => {
-      dataResponse[dataResponse.lenght - 1]
-      this.randomon.push(dataResponse)
-    })
     this.dataService.getAllPokemons().subscribe((dataResponse: any) => {
       this.allMons = dataResponse.results
     })

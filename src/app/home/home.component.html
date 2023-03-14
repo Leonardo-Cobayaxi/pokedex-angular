@@ -13,10 +13,10 @@
                 placeholder="Ex. Ditto ">
         </mat-form-field>
     </form>
-    <div class="empty-card" *ngIf="!showSearchCard">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <div class="empty-card" *ngIf="showEmptyCard">
         <h1>Type a pokémon name above</h1>
     </div>
-    <!-- <mat-spinner></mat-spinner> -->
 
 
     <div class="best-container" *ngIf="showSearchCard">
