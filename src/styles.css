@@ -104,6 +104,12 @@
 
 }
 
+.poke-card:hover {
+    cursor: pointer;
+    opacity: 80%;
+    transform: scale(1.05);
+}
+
 .poke-card img {
     max-width: 30%;
     max-height: 50%;
@@ -188,5 +194,5 @@
 
 .best-ability li {
     border-radius: 7%;
-    background-color: #c2185b;
+    background-color: #313131;
 }

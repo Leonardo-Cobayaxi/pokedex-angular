@@ -30,6 +30,11 @@
     margin-top: 5rem;
 }
 
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
 
 .best-card {
     top: 22%;
