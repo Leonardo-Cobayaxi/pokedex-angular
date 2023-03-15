@@ -1,7 +1,8 @@
 <div class="poke-grid">
     <div class="modal" *ngIf="openModal">
         <h1 (click)="closeModal()">X</h1>
-        <div class="best-card" *ngFor="let best of pokeDetails">
+        <div class="best-card animation" *ngFor="let best of pokeDetails">
+
             <img [src]="best.sprites.other['official-artwork'].front_default">
             <h3>{{best.name}}</h3>
             <div class="best-stats">

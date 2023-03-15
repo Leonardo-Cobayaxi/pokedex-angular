@@ -25,7 +25,9 @@
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.9);
     overflow: auto;
+
 }
+
 
 .modal h1 {
     position: absolute;

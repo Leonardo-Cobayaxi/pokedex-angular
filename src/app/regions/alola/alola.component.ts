@@ -15,7 +15,7 @@ export class AlolaComponent {
   public handleModal(pokemon: any) {
     this.openModal = true
     this.pokeDetails.push(pokemon)
-    console.log('click')
+
 
   }
   public closeModal() {
