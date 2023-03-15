@@ -89,20 +89,25 @@
 
 .poke-grid button {
     position: fixed;
-    bottom: 0rem;
+    top: 64px;
+    right: 2rem;
 }
 
 .poke-card {
     width: 20%;
     height: 20vh;
-    background-color: rgba(255, 255, 255, 0.171);
+    background-color: #ffffff2c;
     border-radius: 1rem;
     display: flex;
+
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-around;
     transition: transform 1s;
-
+    background-image: url("./assets/icons8-pokebola-100.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: 10%;
 }
 
 .poke-card:hover {
@@ -112,8 +117,9 @@
 }
 
 .poke-card img {
-    max-width: 30%;
-    max-height: 50%;
+    width: 25%;
+    height: 50%;
+
 
 }
 
@@ -213,4 +219,11 @@
     to {
         transform: scale(1)
     }
+}
+
+.toggleSprite {
+
+    top: 90%;
+    left: 10%;
+
 }
