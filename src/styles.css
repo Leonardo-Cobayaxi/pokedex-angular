@@ -90,7 +90,8 @@
 .poke-grid button {
     position: fixed;
     top: 64px;
-    right: 2rem;
+
+    z-index: 1;
 }
 
 .poke-card {
