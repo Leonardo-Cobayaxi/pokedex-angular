@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { HeaderService } from 'src/app/header/header.service';
 
 @Component({
   selector: 'app-paldea',
@@ -25,7 +26,12 @@ export class PaldeaComponent {
   public changeSprite() {
     this.sprite = !this.sprite
   }
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Gen 9 - Paldea',
+      icon: ''
+    }
+  }
   ngOnInit(): void {
     this.dataService.getPokemonsPaldea().subscribe((response: any) => {
       this.loading = false

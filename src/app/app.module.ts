@@ -12,6 +12,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component'
 import { RegionsComponent } from './regions/regions.component';
@@ -60,7 +61,8 @@ import { RandomonComponent } from './randomon/randomon.component';
     MatProgressBarModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

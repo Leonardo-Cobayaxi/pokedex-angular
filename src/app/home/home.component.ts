@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { HeaderService } from '../header/header.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-home',
@@ -34,14 +34,18 @@ export class HomeComponent {
       this.showSearchCard = true
       this.showTitleCard = false
       this.loading = false
+
     })
   }
 
-  constructor(private dataService: DataService, headerService: HeaderService) {
+  constructor(private dataService: DataService, headerService: HeaderService, private _snackBar: MatSnackBar) {
     headerService.headerData = {
       title: 'Home',
       icon: 'home'
     }
+  }
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 
   ngOnInit(): void {

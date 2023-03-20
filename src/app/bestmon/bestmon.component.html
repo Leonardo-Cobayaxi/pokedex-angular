@@ -1,34 +1,38 @@
 <div class="best-container">
-    <mat-spinner *ngIf="loading" color="accent" class="spinner"></mat-spinner>
-    <div class="best-card" *ngFor="let best of bestmon">
-        <img [src]="best.sprites.other['official-artwork'].front_default">
-        <h3>{{best.name}}</h3>
-        <div class="best-stats">
-            <ul class="best-type">
-                <li class="best-type" *ngFor="let value of best.types" [class]="value?.type.name">{{value?.type.name}}
-                </li>
-            </ul>
-            <ul class="best-ability">
-                <li class="best-ability" *ngFor="let value of best.abilities" [class]="value?.ability.name">
-                    {{value?.ability.name}}</li>
-            </ul>
-
-            <ul>
-                <li>HP<mat-progress-bar mode="determinate" value={{(best.stats[0].base_stat)*(0.4)}}
-                        color="accent"></mat-progress-bar>
-                </li>
-                <li>ATK<mat-progress-bar mode="determinate" value={{(best.stats[1].base_stat)*(0.4)}}
-                        color="accent"></mat-progress-bar></li>
-                <li>DEF<mat-progress-bar mode="determinate" value={{(best.stats[2].base_stat)*(0.4)}}
-                        color="accent"></mat-progress-bar></li>
-                <li>SP.ATK<mat-progress-bar mode="determinate" value={{(best.stats[3].base_stat)*(0.4)}}
-                        color="accent"></mat-progress-bar></li>
-                <li>SP.DEF<mat-progress-bar mode="determinate" value={{(best.stats[4].base_stat)*(0.4)}}
-                        color="accent"></mat-progress-bar></li>
-                <li>SPEED<mat-progress-bar mode="determinate" value={{(best.stats[5].base_stat)*(0.4)}}
-                        color="accent"></mat-progress-bar></li>
-            </ul>
+        <mat-spinner *ngIf="loading" color="accent" class="spinner"></mat-spinner>
+        <div class="best-card" *ngFor="let best of bestmon">
+                <img [src]="best.sprites.other['official-artwork'].front_default">
+                <h3>{{best.name}}</h3>
+                <div class="best-stats">
+                        <ul class="best-type">
+                                <li class="best-type" *ngFor="let value of best.types" [class]="value?.type.name">
+                                        {{value?.type.name}}
+                                </li>
+                        </ul>
+                        <div class="best-ability">
+                                <ul *ngFor="let value of best.abilities">
+                                        <li class="not-hidden" *ngIf="!value.is_hidden" [class]="value?.ability.name">
+                                                {{value?.ability.name}}</li>
+                                        <li class="hidden" *ngIf="value.is_hidden">
+                                                {{value?.ability.name}} </li>
+                                </ul>
+                        </div>
+                        <ul>
+                                <li>HP<mat-progress-bar mode="determinate" value={{(best.stats[0].base_stat)*(0.4)}}
+                                                color="accent"></mat-progress-bar>
+                                </li>
+                                <li>ATK<mat-progress-bar mode="determinate" value={{(best.stats[1].base_stat)*(0.4)}}
+                                                color="accent"></mat-progress-bar></li>
+                                <li>DEF<mat-progress-bar mode="determinate" value={{(best.stats[2].base_stat)*(0.4)}}
+                                                color="accent"></mat-progress-bar></li>
+                                <li>SP.ATK<mat-progress-bar mode="determinate" value={{(best.stats[3].base_stat)*(0.4)}}
+                                                color="accent"></mat-progress-bar></li>
+                                <li>SP.DEF<mat-progress-bar mode="determinate" value={{(best.stats[4].base_stat)*(0.4)}}
+                                                color="accent"></mat-progress-bar></li>
+                                <li>SPEED<mat-progress-bar mode="determinate" value={{(best.stats[5].base_stat)*(0.4)}}
+                                                color="accent"></mat-progress-bar></li>
+                        </ul>
+                </div>
         </div>
-    </div>
 
 </div>

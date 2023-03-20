@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { HeaderService } from 'src/app/header/header.service';
 
 @Component({
   selector: 'app-unova',
@@ -25,7 +26,12 @@ export class UnovaComponent {
   public changeSprite() {
     this.sprite = !this.sprite
   }
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Gen 5 - Unova',
+      icon: ''
+    }
+  }
   ngOnInit(): void {
     this.dataService.getPokemonUnova().subscribe((response: any) => {
       this.loading = false
