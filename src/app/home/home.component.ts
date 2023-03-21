@@ -15,6 +15,7 @@ export class HomeComponent {
   showTitleCard: boolean = true
   showEmptyCard: boolean = true
   loading: boolean = false
+  showShiny: boolean = false
 
   public search(value: string) {
     let filter = this.allMons.filter((mon: any) => mon.name === value.toLocaleLowerCase())
@@ -30,22 +31,31 @@ export class HomeComponent {
       this.showEmptyCard = false
     }
     this.dataService.getMoreData(filter[0].name).subscribe((dataResponse: any) => {
+      this.searchMon = []
       this.searchMon.push(dataResponse)
       this.showSearchCard = true
       this.showTitleCard = false
       this.loading = false
+      this.openSnackBar('Hidden Ability highlighted in red.', 'X', 'snack')
 
     })
   }
-
+  public changeShiny() {
+    this.showShiny = !this.showShiny
+  }
   constructor(private dataService: DataService, headerService: HeaderService, private _snackBar: MatSnackBar) {
     headerService.headerData = {
       title: 'Home',
       icon: 'home'
     }
   }
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action);
+  openSnackBar(message: string, action: string, className: string) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+      verticalPosition: 'bottom',
+      horizontalPosition: 'right',
+      panelClass: [className],
+    });
   }
 
   ngOnInit(): void {

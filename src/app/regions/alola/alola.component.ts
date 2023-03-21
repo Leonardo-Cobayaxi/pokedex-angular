@@ -7,6 +7,7 @@ import { HeaderService } from 'src/app/header/header.service';
   styleUrls: ['./alola.component.css']
 })
 export class AlolaComponent {
+  showShiny: boolean = false
   pokemons: any[] = []
   sprite: boolean = false
   loading: boolean = true
@@ -21,10 +22,16 @@ export class AlolaComponent {
   public closeModal() {
     this.openModal = false
     this.pokeDetails = []
+    this.showShiny = false
 
   }
   public changeSprite() {
     this.sprite = !this.sprite
+  }
+
+
+  public changeShiny() {
+    this.showShiny = !this.showShiny
   }
   constructor(private dataService: DataService, headerService: HeaderService) {
     headerService.headerData = {

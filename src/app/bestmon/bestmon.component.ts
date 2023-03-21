@@ -8,6 +8,7 @@ import { DataService } from '../services/data.service';
   templateUrl: './bestmon.component.html',
   styleUrls: ['./bestmon.component.css']
 })
+
 export class BestmonComponent {
   loading: boolean = true
   bestmon: any[] = []
@@ -16,6 +17,11 @@ export class BestmonComponent {
       title: 'Best Mon',
       icon: 'favorite'
     }
+  }
+  showShiny: boolean = false
+
+  public changeShiny() {
+    this.showShiny = !this.showShiny
   }
   ngOnInit(): void {
 

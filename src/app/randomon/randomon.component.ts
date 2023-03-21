@@ -26,6 +26,12 @@ export class RandomonComponent {
       this.randomon.push(dataResponse)
     })
   }
+
+  showShiny: boolean = false
+
+  public changeShiny() {
+    this.showShiny = !this.showShiny
+  }
   constructor(private dataService: DataService, headerService: HeaderService) {
     headerService.headerData = {
       title: 'Randomon',

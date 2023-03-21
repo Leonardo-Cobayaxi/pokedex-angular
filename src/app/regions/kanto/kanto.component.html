@@ -2,7 +2,9 @@
     <div class="modal" *ngIf="openModal">
         <h1 (click)="closeModal()">X</h1>
         <div class="best-card animation" *ngFor="let best of pokeDetails">
-            <img [src]="best.sprites.other['official-artwork'].front_default">
+            <img *ngIf="!showShiny" (click)="changeShiny()"
+                [src]="best.sprites.other['official-artwork'].front_default">
+            <img *ngIf="showShiny" (click)="changeShiny()" [src]="best.sprites.other['official-artwork'].front_shiny">
             <h3>{{best.name}}</h3>
             <div class="best-stats">
                 <ul class="best-type">
@@ -54,5 +56,15 @@
                 <li *ngFor="let value of pokemon.types" [class]="value?.type.name">{{value?.type.name}}</li>
             </ul>
         </div>
+    </div>
+    <div class="snack-bar">
+        <mat-form-field appearance="fill">
+            <mat-label></mat-label>
+            <input matInput value="Hidden" #message>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <input matInput value="X" #action>
+        </mat-form-field>
     </div>
 </div>

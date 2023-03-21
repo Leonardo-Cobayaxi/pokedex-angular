@@ -3,7 +3,10 @@
         <mat-spinner *ngIf="loading" color="accent" class="spinner"></mat-spinner>
 
         <div class="best-card" *ngFor="let best of randomon">
-                <img [src]="best.sprites.other['official-artwork'].front_default">
+                <img *ngIf="!showShiny" (click)="changeShiny()"
+                        [src]="best.sprites.other['official-artwork'].front_default">
+                <img *ngIf="showShiny" (click)="changeShiny()"
+                        [src]="best.sprites.other['official-artwork'].front_shiny">
                 <h3>{{best.name}}</h3>
                 <div class="best-stats">
                         <ul class="best-type">

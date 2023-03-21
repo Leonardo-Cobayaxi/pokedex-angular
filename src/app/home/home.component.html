@@ -21,7 +21,10 @@
 
     <div class="best-container" *ngIf="showSearchCard">
         <div class="best-card" *ngFor="let best of searchMon">
-            <img [src]="best.sprites.other['official-artwork'].front_default">
+            <img *ngIf="!showShiny" (click)="changeShiny()"
+                [src]="best.sprites.other['official-artwork'].front_default">
+            <img *ngIf="showShiny" (click)="changeShiny()" [src]="best.sprites.other['official-artwork'].front_shiny">
+
             <h3>{{best.name}}</h3>
             <div class="best-stats">
                 <ul class="best-type">
@@ -56,9 +59,8 @@
         </div>
     </div>
     <div class="snack-bar">
-
         <mat-form-field appearance="fill">
-            <mat-label>Message</mat-label>
+            <mat-label></mat-label>
             <input matInput value="Hidden" #message>
         </mat-form-field>
 
@@ -66,6 +68,4 @@
             <input matInput value="X" #action>
         </mat-form-field>
     </div>
-
-    <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
 </div>

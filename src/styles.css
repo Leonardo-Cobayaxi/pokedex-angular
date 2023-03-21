@@ -234,12 +234,11 @@
 }
 
 .toggleSprite {
-
     top: 90%;
     left: 10%;
-
 }
 
 .snack-bar {
     display: none;
+    position: absolute;
 }

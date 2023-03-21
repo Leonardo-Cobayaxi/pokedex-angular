@@ -12,14 +12,20 @@ export class GalarComponent {
   loading: boolean = true
   openModal: boolean = false
   pokeDetails: any[] = []
+  showShiny: boolean = false
+
+  public changeShiny() {
+    this.showShiny = !this.showShiny
+  }
   public handleModal(pokemon: any) {
     this.openModal = true
     this.pokeDetails.push(pokemon)
-    console.log(this.pokeDetails)
+
   }
   public closeModal() {
     this.openModal = false
     this.pokeDetails = []
+    this.showShiny = false
 
   }
   public changeSprite() {
@@ -40,7 +46,7 @@ export class GalarComponent {
           let ascID = this.pokemons.sort(function (first, second) {
             return first.id - second.id
           })
-          console.log(this.pokemons)
+
         })
       });
     });
