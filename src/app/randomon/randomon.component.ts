@@ -9,6 +9,7 @@ import { HeaderService } from '../header/header.service';
 })
 export class RandomonComponent {
   randomon: any[] = []
+  showShiny: boolean = false
   loading: boolean = true
   randomNumber = function (min: number = 0, max: number = 1010) {
     let difference = max - min;
@@ -17,19 +18,21 @@ export class RandomonComponent {
     rand = rand + min;
     return rand;
   }
-  mudar() {
+  change() {
     this.randomon = []
     this.loading = true
+    this.showShiny = false
     this.dataService.getMoreData(this.randomNumber(0, 1010)).subscribe((dataResponse: any) => {
       this.loading = false
       dataResponse[dataResponse.lenght - 1]
       this.randomon.push(dataResponse)
+
     })
   }
 
-  showShiny: boolean = false
 
   public changeShiny() {
+
     this.showShiny = !this.showShiny
   }
   constructor(private dataService: DataService, headerService: HeaderService) {
