@@ -5,7 +5,6 @@
     flex-direction: column;
     align-items: center;
 
-
 }
 
 .home-card {
@@ -44,10 +43,11 @@
     left: 50%;
 }
 
+
 .best-card {
-    top: 22%;
-
-
+    position: fixed;
+    top: 120px;
+    width: 25%;
 }
 
 .empty-card {

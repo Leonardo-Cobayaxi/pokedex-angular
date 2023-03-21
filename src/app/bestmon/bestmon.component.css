@@ -13,5 +13,7 @@
 }
 
 .best-card {
-    top: auto;
+    position: fixed;
+    top: 10%;
+    width: 25%;
 }
