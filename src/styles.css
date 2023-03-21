@@ -87,10 +87,10 @@
     margin-top: 64px;
 }
 
+
 .poke-grid button {
     position: fixed;
     top: 64px;
-
     z-index: 1;
 }
 
@@ -100,7 +100,6 @@
     background-color: #ffffff2c;
     border-radius: 1rem;
     display: flex;
-
     justify-content: center;
     align-items: center;
     justify-content: space-around;
@@ -121,7 +120,6 @@
     width: 25%;
     height: 50%;
 
-
 }
 
 
@@ -137,6 +135,8 @@
     padding: 0.10rem;
 }
 
+
+
 .best-container {
     display: flex;
     align-items: center;
@@ -150,7 +150,8 @@
     border-radius: 5%;
     padding: 1rem;
     position: fixed;
-    top: 10%;
+    top: 50%;
+
     max-width: 30%;
 
 }
@@ -241,4 +242,42 @@
 .snack-bar {
     display: none;
     position: absolute;
+}
+
+@media (max-width:1025px) {
+    .poke-grid {
+        display: flex;
+        flex-wrap: wrap;
+        height: 90vh;
+        gap: 1rem;
+        text-transform: capitalize;
+        justify-content: center;
+        margin-top: 64px;
+    }
+
+    .poke-card {
+        flex: 0 0 33.333333%;
+        height: 20vh;
+        width: 10%;
+    }
+
+
+}
+
+@media (max-width:769px) {
+    .poke-grid {
+        display: flex;
+        flex-wrap: wrap;
+        height: 90vh;
+        gap: 1rem;
+        text-transform: capitalize;
+        justify-content: center;
+        margin-top: 64px;
+    }
+
+    .poke-card {
+        flex: 0 0 66.666666%;
+        height: 25vh;
+    }
+
 }
