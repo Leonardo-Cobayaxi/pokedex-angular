@@ -151,7 +151,7 @@
     padding: 1rem;
     position: fixed;
     top: 50%;
-
+    max-height: 100%;
     max-width: 30%;
 
 }
@@ -278,6 +278,7 @@
     .poke-card {
         flex: 0 0 66.666666%;
         height: 25vh;
+        width: auto;
     }
 
 }
