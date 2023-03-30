@@ -10,6 +10,11 @@
     height: auto;
 }
 
+.toggleButton {
+    position: absolute;
+    top: 64px;
+}
+
 .best-stats {
     background-color: #5c5c5c
 }

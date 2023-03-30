@@ -22,7 +22,7 @@
 }
 
 .water {
-    background-color: rgb(4, 4, 163);
+    background-color: #6790F0;
 }
 
 .bug {
@@ -87,10 +87,7 @@
     margin-top: 64px;
 }
 
-
 .poke-grid button {
-    position: fixed;
-    top: 64px;
     z-index: 1;
 }
 
@@ -153,7 +150,7 @@
     top: 50%;
     max-height: 100%;
     max-width: 30%;
-
+    width: 25%;
 }
 
 .best-card h3 {
@@ -167,6 +164,17 @@
     align-self: center;
 }
 
+.best-image {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.best-name {
+    display: flex;
+    justify-content: space-between;
+
+}
 
 .best-card li {
     list-style: none;
@@ -177,6 +185,10 @@
     padding: 0.5rem;
     background-color: #424242;
     border-radius: 5%;
+}
+
+.best-stats p {
+    text-transform: capitalize;
 }
 
 .best-type {
@@ -281,4 +293,12 @@
         width: auto;
     }
 
+}
+
+.cycleRandom {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 64px;
+    z-index: 1;
 }

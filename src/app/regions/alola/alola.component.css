@@ -4,6 +4,11 @@
     left: 50%;
 }
 
+.toggleButton {
+    position: absolute;
+    top: 64px;
+}
+
 .best-card {
     background-color: #424242;
     top: 9%;

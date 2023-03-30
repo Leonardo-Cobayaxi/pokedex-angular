@@ -14,20 +14,36 @@ export class KalosComponent {
   openModal: boolean = false
   pokeDetails: any[] = []
   showShiny: boolean = false
-
+  pokeEntry: any[] = []
+  pokeFlavor: any[] = []
+  cardBack: boolean = false
+  public changeCard() {
+    this.cardBack = !this.cardBack
+  }
   public changeShiny() {
     this.showShiny = !this.showShiny
   }
   public handleModal(pokemon: any) {
     this.openModal = true
     this.pokeDetails.push(pokemon)
+    this.dataService.getPokemonEntry(pokemon.name).subscribe((entry: any) => {
+      this.pokeEntry.push(entry)
+      const fileterdFlavorTextEntries: any = entry.flavor_text_entries.filter(
+        (element: any) => element.language.name === "en"
+      );
+      const flavorTextEntry = fileterdFlavorTextEntries.length > 0 ? fileterdFlavorTextEntries[0] : {};
+      this.pokeFlavor.push(flavorTextEntry)
+    })
+
 
   }
   public closeModal() {
     this.openModal = false
     this.pokeDetails = []
     this.showShiny = false
-
+    this.pokeEntry = []
+    this.pokeFlavor = []
+    this.cardBack = false
   }
   public changeSprite() {
     this.sprite = !this.sprite
@@ -55,7 +71,7 @@ export class KalosComponent {
           let ascID = this.pokemons.sort(function (first, second) {
             return first.id - second.id
           })
-          this.openSnackBar('No more animated sprites onward.', 'X', 'snack')
+          this.openSnackBar('No more animated sprites onwards.', 'X', 'snack')
 
 
         })

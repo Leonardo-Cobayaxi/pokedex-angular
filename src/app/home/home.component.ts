@@ -11,6 +11,9 @@ export class HomeComponent {
   @Output() public emmitSearch: EventEmitter<string> = new EventEmitter();
   private allMons: any
   searchMon: any[] = []
+  pokeEntry: any[] = []
+  pokeFlavor: any[] = []
+  cardBack: boolean = false
   showSearchCard: boolean = false
   showTitleCard: boolean = true
   showEmptyCard: boolean = true
@@ -21,6 +24,9 @@ export class HomeComponent {
     let filter = this.allMons.filter((mon: any) => mon.name === value.toLocaleLowerCase())
     if (value === '') {
       this.searchMon = []
+      this.pokeEntry = []
+      this.pokeFlavor = []
+      this.showShiny = false
       this.showSearchCard = false
       this.showEmptyCard = true
       this.loading = false
@@ -31,6 +37,16 @@ export class HomeComponent {
       this.showEmptyCard = false
     }
     this.dataService.getMoreData(filter[0].name).subscribe((dataResponse: any) => {
+      this.dataService.getPokemonEntry(dataResponse.name).subscribe((entry: any) => {
+        this.pokeEntry = []
+        this.pokeFlavor = []
+        this.pokeEntry.push(entry)
+        const fileterdFlavorTextEntries = entry.flavor_text_entries.filter(
+          (element: any) => element.language.name === "en"
+        );
+        const flavorTextEntry = fileterdFlavorTextEntries.length > 0 ? fileterdFlavorTextEntries[0] : {};
+        this.pokeFlavor.push(flavorTextEntry)
+      })
       this.searchMon = []
       this.searchMon.push(dataResponse)
       this.showSearchCard = true
@@ -39,6 +55,9 @@ export class HomeComponent {
       this.openSnackBar('Hidden Ability highlighted in red.', 'X', 'snack')
 
     })
+  }
+  public changeCard() {
+    this.cardBack = !this.cardBack
   }
   public changeShiny() {
     this.showShiny = !this.showShiny

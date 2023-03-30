@@ -40,3 +40,10 @@
 .modal h1:hover {
     cursor: pointer;
 }
+
+
+
+.toggleButton {
+    position: absolute;
+    top: 64px;
+}

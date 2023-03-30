@@ -43,4 +43,7 @@ export class DataService {
   getMoreData(name: any) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }
+  getPokemonEntry(name: any) {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${name}/`)
+  }
 }

@@ -8,6 +8,13 @@
     background-color: #424242;
     top: 9%;
     height: auto;
+
+}
+
+
+.toggleButton {
+    position: absolute;
+    top: 64px;
 }
 
 .best-stats {

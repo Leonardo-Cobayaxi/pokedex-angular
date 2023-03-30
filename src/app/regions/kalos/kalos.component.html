@@ -2,46 +2,82 @@
     <div class="modal" *ngIf="openModal">
         <h1 (click)="closeModal()">X</h1>
         <div class="best-card animation" *ngFor="let best of pokeDetails">
-            <img *ngIf="!showShiny" (click)="changeShiny()"
-                [src]="best.sprites.other['official-artwork'].front_default">
-            <img *ngIf="showShiny" (click)="changeShiny()" [src]="best.sprites.other['official-artwork'].front_shiny">
-            <h3>{{best.name}}</h3>
-            <div class="best-stats">
-                <ul class="best-type">
-                    <li class="best-type" *ngFor="let value of best.types" [class]="value?.type.name">
-                        {{value?.type.name}}
-                    </li>
-                </ul>
-                <div class="best-ability">
-                    <ul *ngFor="let value of best.abilities">
-                        <li class="not-hidden" *ngIf="!value.is_hidden" [class]="value?.ability.name">
-                            {{value?.ability.name}}</li>
-                        <li class="hidden" *ngIf="value.is_hidden">
-                            {{value?.ability.name}} </li>
+            <div *ngIf="!cardBack">
+                <div class="best-image">
+                    <img *ngIf="!showShiny" (click)="changeShiny()"
+                        [src]="best.sprites.other['official-artwork'].front_default">
+                    <img *ngIf="showShiny" (click)="changeShiny()"
+                        [src]="best.sprites.other['official-artwork'].front_shiny">
+                </div>
+                <div class="best-name">
+                    <button mat-button color="accent" (click)="changeCard()">&lt;</button>
+                    <h3>{{best.name}}</h3>
+                    <button mat-button color="accent" (click)="changeCard()">&gt;</button>
+                </div>
+                <div class="best-stats">
+                    <ul class="best-type">
+                        <li class="best-type" *ngFor="let value of best.types" [class]="value?.type.name">
+                            {{value?.type.name}}
+                        </li>
+                    </ul>
+                    <div class="best-ability">
+                        <ul *ngFor="let value of best.abilities">
+                            <li class="not-hidden" *ngIf="!value.is_hidden" [class]="value?.ability.name">
+                                {{value?.ability.name}}</li>
+                            <li class="hidden" *ngIf="value.is_hidden">
+                                {{value?.ability.name}} </li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li>HP<mat-progress-bar mode="determinate" value={{(best.stats[0].base_stat)*(0.4)}}
+                                color="accent"></mat-progress-bar>
+                        </li>
+                        <li>ATK<mat-progress-bar mode="determinate" value={{(best.stats[1].base_stat)*(0.4)}}
+                                color="accent"></mat-progress-bar></li>
+                        <li>DEF<mat-progress-bar mode="determinate" value={{(best.stats[2].base_stat)*(0.4)}}
+                                color="accent"></mat-progress-bar></li>
+                        <li>SP.ATK<mat-progress-bar mode="determinate" value={{(best.stats[3].base_stat)*(0.4)}}
+                                color="accent"></mat-progress-bar></li>
+                        <li>SP.DEF<mat-progress-bar mode="determinate" value={{(best.stats[4].base_stat)*(0.4)}}
+                                color="accent"></mat-progress-bar></li>
+                        <li>SPEED<mat-progress-bar mode="determinate" value={{(best.stats[5].base_stat)*(0.4)}}
+                                color="accent"></mat-progress-bar></li>
                     </ul>
                 </div>
+            </div>
+            <div *ngIf="cardBack">
+                <div class="best-image">
 
-                <ul>
-                    <li>HP<mat-progress-bar mode="determinate" value={{(best.stats[0].base_stat)*(0.4)}}
-                            color="accent"></mat-progress-bar>
-                    </li>
-                    <li>ATK<mat-progress-bar mode="determinate" value={{(best.stats[1].base_stat)*(0.4)}}
-                            color="accent"></mat-progress-bar></li>
-                    <li>DEF<mat-progress-bar mode="determinate" value={{(best.stats[2].base_stat)*(0.4)}}
-                            color="accent"></mat-progress-bar></li>
-                    <li>SP.ATK<mat-progress-bar mode="determinate" value={{(best.stats[3].base_stat)*(0.4)}}
-                            color="accent"></mat-progress-bar></li>
-                    <li>SP.DEF<mat-progress-bar mode="determinate" value={{(best.stats[4].base_stat)*(0.4)}}
-                            color="accent"></mat-progress-bar></li>
-                    <li>SPEED<mat-progress-bar mode="determinate" value={{(best.stats[5].base_stat)*(0.4)}}
-                            color="accent"></mat-progress-bar></li>
-                </ul>
+                    <img *ngIf="!showShiny" (click)="changeShiny()"
+                        [src]="best.sprites.other['official-artwork'].front_default">
+                    <img *ngIf="showShiny" (click)="changeShiny()"
+                        [src]="best.sprites.other['official-artwork'].front_shiny">
+                </div>
+                <div *ngFor="let entry of pokeEntry">
+                    <div class="best-name">
+                        <button mat-button color="accent" (click)="changeCard()">&lt;</button>
+                        <h3>{{entry.name}}</h3>
+                        <button mat-button color="accent" (click)="changeCard()">&gt;</button>
+                    </div>
+                    <div class="best-stats">
+                        <p>National Dex ID: {{entry.id}}</p>
+                        <p>Genera: {{entry.genera[7].genus}}</p>
+                        <p>Egg Group: {{entry.egg_groups[0].name}}</p>
+                        <p>Shape: {{entry.shape.name}}</p>
+                        <p>Height: {{(best.height)*1/10}}m</p>
+                        <p>Weight: {{(best.weight)*1/10}}KG</p>
+                        <div *ngFor="let flavor of pokeFlavor">
+                            <span>{{flavor.flavor_text}}</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-    <mat-spinner *ngIf="loading" color="accent" class="spinner"></mat-spinner>
 
-    <button mat-raised-button color="primary" (click)="changeSprite()">
+    <mat-spinner *ngIf="loading" color="accent" class="spinner"></mat-spinner>
+    <button class="toggleButton" mat-raised-button color="primary" (click)="changeSprite()">
         Toggle Sprites
     </button>
     <div class="poke-card" *ngFor="let pokemon of pokemons" (click)="handleModal(pokemon)">
