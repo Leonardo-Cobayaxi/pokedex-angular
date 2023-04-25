@@ -60,13 +60,13 @@
                         <button mat-button color="accent" (click)="changeCard()">&gt;</button>
                     </div>
                     <div class="best-stats">
-                        <p>National Dex ID: {{entry.id}}</p>
-                        <p>Genera: {{entry.genera[7].genus}}</p>
-                        <p>Egg Group: {{entry.egg_groups[0].name}}</p>
-                        <p>Shape: {{entry.shape.name}}</p>
-                        <p>Height: {{(best.height)*1/10}}m</p>
-                        <p>Weight: {{(best.weight)*1/10}}KG</p>
-                        <div *ngFor="let flavor of pokeFlavor">
+                        <p>National Dex ID : {{entry.id}}</p>
+                        <p>Genera : {{entry.genera[7].genus}}</p>
+                        <p>Egg Group : {{entry.egg_groups[0].name}}</p>
+                        <p>Shape : {{entry.shape.name}}</p>
+                        <p>Height : {{(best.height)*1/10}}m</p>
+                        <p>Weight : {{(best.weight)*1/10}}KG</p>
+                        <div class="flavor" *ngFor="let flavor of pokeFlavor">
                             <span>{{flavor.flavor_text}}</span>
                         </div>
                     </div>

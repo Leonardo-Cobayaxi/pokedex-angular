@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow-y: visible;
 }
 
 .grass {
@@ -116,7 +117,6 @@
 .poke-card img {
     width: 25%;
     height: 50%;
-
 }
 
 
@@ -146,7 +146,7 @@
     background-color: rgba(196, 186, 190, 0.055);
     border-radius: 5%;
     padding: 1rem;
-    position: fixed;
+    position: absolute;
     top: 50%;
     max-height: 100%;
     max-width: 30%;
@@ -191,6 +191,10 @@
     text-transform: capitalize;
 }
 
+.best-stats li {
+    padding-bottom: 7px;
+}
+
 .best-type {
     display: flex;
     flex-direction: row;
@@ -213,6 +217,13 @@
     justify-content: center;
     text-transform: capitalize;
 
+}
+
+.flavor {
+    background-color: #4e4e4e;
+    text-align: center;
+    border-radius: 5%;
+    padding: 1%;
 }
 
 .not-hidden {
