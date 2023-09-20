@@ -159,16 +159,19 @@
 }
 
 .best-card img {
-    width: 80%;
-
+    max-width: 80%;
+    min-height: 100%;
     align-self: center;
 }
 
 .best-image {
     display: flex;
     flex-direction: column;
+    min-height: 38vh;
 
 }
+
+
 
 .best-name {
     display: flex;
